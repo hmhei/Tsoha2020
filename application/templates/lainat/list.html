@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Laina</th>
+      <th>Palautettu</th>
+      <th></th>
+    </tr>
+    {% for laina in lainat %}
+    <tr>
+      <td>{{ laina.name }}</td>
+      <td>{{ laina.done }}</td>
+      <td>
+	<form method="POST" action="{{ url_for('lainat_set_done', laina_id=laina.id) }}">
+	  <input type="submit" value="Merkitse palautetuksi!"/>
+	</form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

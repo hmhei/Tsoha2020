@@ -1,23 +1,19 @@
-# KIRJASTOJEN VARAUS- JA LAINAUSJÄRJESTELMÄ
+# KIRJASTON LAINAUSJÄRJESTELMÄ
 
-Harjoitustyössä on tarkoitus tehdä kirjojen varaus- ja lainausjärjestelmä kirjastolle.
+Harjoitustyössä on tarkoitus tehdä kirjojen lainausjärjestelmä kirjastolle.
 
 Kirjaston järjestelmässä kolme erityyppistä käyttäjää: asiakas (rajatut oikeudet), kirjaston työntekijä (laajemmat oikeudet), ylläpitäjä (täydet oikeudet).
 
-Kuka tahansa voi tarkastella kirjaston valikoimaa ja niteiden tietoja, sekä tehdä lainoja, lainan uusimisia, varauksia ja varausten poistoja. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi).
+Kuka tahansa voi tarkastella kirjaston nidevalikoimaa ja niteiden tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi).
 
-## TOIMINTOJA (muun muassa):
+## TOIMINTOJA:
 
   * Kirjautuminen
-  * Varauksen lisääminen ja oman varauksen poistaminen
-  * Omien varausten tarkastelu, tietyn kirjan varauslistan tarkastelu (ei muiden varaajien tietoja, mutta tieto mm. varausjärjestyksestä)
   * Asiakkaan rekisteröityminen, omien tietojen tarkastelu ja muokkaus
   * Asiakkaan tietojen tarkastelu ja muokkaaminen kirjaston työntekijän toimesta
   * Asiakkaan tarkastelu, lisääminen, muokkaaminen ja poistaminen ylläpitäjän toimesta
-  * Kirjan tilaaminen tiettyyn kirjastoon
-  * Lainan uusiminen, peruuttaminen
+  * Kirjan lainaaminen, lainan uusiminen, lainan kuittaaminen palautetuksi
   * Asiakkaan lainojen kokonaismäärän rajoittaminen (esim. yhteensä 30 kpl niteitä)
-  * Myöhästymismuistutuksen / maksumuistutuksen lähettäminen asiakkaalle kirjaston työntekijän toimesta
 
 ## LINKKI TIETOKANTAKAAVIOON:
 
