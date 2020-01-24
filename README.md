@@ -19,4 +19,4 @@ Kuka tahansa voi tarkastella kirjaston nidevalikoimaa ja niteiden tietoja, sekä
 
 ## TIETOKANTAKAAVIO:
 
-![Kirjaston lainausjärjestelmä](https://github.com/hmhei/Tsoha2020/blob/master/documentation/Tsoha2020.png)
+![Kirjaston lainausjärjestelmä](https://github.com/hmhei/Tsoha2020/blob/master/documentation/Tietokantakaavio.png)
