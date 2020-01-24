@@ -15,6 +15,6 @@ Kuka tahansa voi tarkastella kirjaston nidevalikoimaa ja niteiden tietoja, sekä
   * Kirjan lainaaminen, lainan uusiminen, lainan kuittaaminen palautetuksi
   * Asiakkaan lainojen kokonaismäärän rajoittaminen (esim. yhteensä 30 kpl niteitä)
 
-## LINKKI TIETOKANTAKAAVIOON:
+## TIETOKANTAKAAVIO:
 
-https://drive.google.com/file/d/1mWS8ABptRuZHe1Cy6wSDELrvv6NM-3Lu/view?usp=sharing
+![Kirjaston lainausjärjestelmä](https://github.com/hmhei/Tsoha2020/blob/master/documentation/Tsoha2020.png)
