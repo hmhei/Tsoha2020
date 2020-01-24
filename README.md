@@ -1,6 +1,6 @@
 # KIRJASTON LAINAUSJÄRJESTELMÄ
 
-[https://tsoha-lainaus.herokuapp.com/]
+https://tsoha-lainaus.herokuapp.com/
 
 Harjoitustyössä on tarkoitus tehdä kirjojen lainausjärjestelmä kirjastolle.
 
