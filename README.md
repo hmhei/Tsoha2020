@@ -1,5 +1,7 @@
 # KIRJASTON LAINAUSJÄRJESTELMÄ
 
+[https://tsoha-lainaus.herokuapp.com/]
+
 Harjoitustyössä on tarkoitus tehdä kirjojen lainausjärjestelmä kirjastolle.
 
 Kirjaston järjestelmässä kolme erityyppistä käyttäjää: asiakas (rajatut oikeudet), kirjaston työntekijä (laajemmat oikeudet), ylläpitäjä (täydet oikeudet).
