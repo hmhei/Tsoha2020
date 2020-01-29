@@ -2,8 +2,35 @@
   
 {% block body %}
 <form method="POST" action="{{ url_for('lainat_create') }}">
-  <input type="text" name="name"/>
-  <input type="submit" value="Lisää uusi laina"/>
+  <table>
+    <tr>
+      <td>
+        {{ form.name.label }}
+      </td>
+      <td>
+        {{ form.name }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.name.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.returned.label }}
+      </td>
+      <td>
+        {{ form.returned }}
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <input type="submit" value="Lisää uusi laina"/>
+      </td>
+    </tr>  
 </form>
 {% endblock %}
 
