@@ -5,27 +5,38 @@
       <title>Lainausjärjestelmä</title>
       <style>
         .button {
-	background-color: #1c87c9;
-	border: none;
-	color: white;
-	padding: 20px 34px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 20px;
-	margin: 4px 2px;
-	cursor: pointer;
-	}
+          background-color: #1c87c9;
+          border: none;
+          color: white;
+          padding: 20px 34px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 2px;
+          cursor: pointer;
+	      }
       </style>
     </head>
     
     <body>
+      {% if current_user.is_authenticated %}
+      <p>
+        Kirjautunut nimellä {{ current_user.name }}.
+        <br>
+        <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+      </p>
+      {% else %}
+      <a href="{{ url_for('auth_login') }}">Kirjaudu sisään</a>
+      {% endif %}
+      <p></p>
       <a href="{{ url_for('lainat_index') }}" class="button">Listaa lainat</a>
       <a href="{{ url_for('lainat_form') }}" class="button">Lisää laina</a>
+      <br>
       
       {% block body %}
       <p>
-	Content.
+	      Content.
       </p>
       {% endblock %}
     </body>
