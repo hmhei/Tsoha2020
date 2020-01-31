@@ -23,16 +23,18 @@
       {% if current_user.is_authenticated %}
       <p>
         Kirjautunut nimellä {{ current_user.name }}.
-        <br>
+        <p></p>
         <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
       </p>
       {% else %}
       <a href="{{ url_for('auth_login') }}">Kirjaudu sisään</a>
+      <p>
+        tai <a href="{{ url_for('auth_register') }}">Rekisteröidy</a>
+      </p>
       {% endif %}
-      <p></p>
       <a href="{{ url_for('lainat_index') }}" class="button">Listaa lainat</a>
       <a href="{{ url_for('lainat_form') }}" class="button">Lisää laina</a>
-      <br>
+      <p></p>
       
       {% block body %}
       <p>
