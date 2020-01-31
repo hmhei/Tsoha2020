@@ -6,6 +6,7 @@ from application.lainat.models import Laina
 from application.lainat.forms import LainaForm
 
 @app.route("/lainat/", methods=["GET"])
+@login_required
 def lainat_index():
     return render_template("lainat/list.html", lainat = Laina.query.all())
 
