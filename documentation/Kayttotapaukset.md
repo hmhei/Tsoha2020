@@ -12,6 +12,8 @@ Käyttäjänä haluan merkitä lainan palautetuksi, jotta kirjasto tietää pala
 
 Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään.
 
+Käyttäjänä haluan poistaa lainan, esimerkiksi lyöntivirheen tms. johdosta (tämä osa tietokannan toiminnallisuutta on harkinnassa, mutta se on  nyt lisätty ainakin toistaiseksi täyden CRUD-toiminnallisuuden toteuttamiseksi).
+
 ## TOTEUTTAMATTA
 
 Käyttäjänä haluan pystyä lukemaan kirjaston tietokannassa olevat kirjat, jotta voin nähdä, mitä kirjoja kirjastossa on olemassa.
