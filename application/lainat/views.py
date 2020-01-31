@@ -1,11 +1,12 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required
+from flask_login import login_required, current_user
 
 from application import app, db
 from application.lainat.models import Laina
 from application.lainat.forms import LainaForm
 
-@app.route("/lainat", methods=["GET"])
+@app.route("/lainat/", methods=["GET"])
+@login_required
 def lainat_index():
     return render_template("lainat/list.html", lainat = Laina.query.all())
 
@@ -34,6 +35,7 @@ def lainat_create():
 
     l = Laina(form.name.data)
     l.done = form.returned.data
+    l.account_id = current_user.id
 
     db.session().add(l)
     db.session().commit()
