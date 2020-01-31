@@ -4,9 +4,11 @@ https://tsoha-lainaus.herokuapp.com/
 
 Harjoitustyössä on tarkoitus tehdä kirjojen lainausjärjestelmä kirjastolle.
 
-Kirjaston järjestelmässä kaksi erityyppistä käyttäjää: asiakas (rajatut oikeudet), ylläpitäjä (täydet oikeudet).
+Kirjaston järjestelmässä kaksi erityyppistä tiliä: 
+	käyttäjä eli asiakas (rajatut oikeudet), ja
+	ylläpitäjä (täydet oikeudet).
 
-Kuka tahansa voi tarkastella kirjaston nidevalikoimaa ja niteiden tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi).
+Kuka tahansa voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi).
 
 ## TOIMINTOJA:
 
@@ -17,6 +19,7 @@ Kuka tahansa voi tarkastella kirjaston nidevalikoimaa ja niteiden tietoja, sekä
   * Kirjan lainaaminen, lainan uusiminen, lainan kuittaaminen palautetuksi
   * Asiakkaan lainojen kokonaismäärän rajoittaminen (esim. yhteensä 30 kpl niteitä)
 
+Käyttötapaukset (täydentyy projektin etenemisen myötä):
 https://github.com/hmhei/Tsoha2020/blob/master/documentation/Kayttotapaukset.md
 
 ## TIETOKANTAKAAVIO:
