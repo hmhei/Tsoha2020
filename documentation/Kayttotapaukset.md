@@ -1,6 +1,6 @@
 # KÄYTTÖTAPAUKSIA
 
-## TOTEUTETTU (ainakin osittain)
+## TOTEUTETTU
 
 Käyttäjänä haluan rekisteröityä uudeksi käyttäjäksi, jotta voin käyttää järjestelmää.
 
@@ -10,7 +10,7 @@ Käyttäjänä haluan lisätä uuden lainan, jotta kirjasto tietää lainanneeni
 
 Käyttäjänä haluan merkitä lainan palautetuksi, jotta kirjasto tietää palauttaneeni kirjan.
 
-Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään.
+Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään (Huom: vain osittain toteutettu, eli foreign keyn osalta).
 
 Käyttäjänä haluan poistaa lainan, esimerkiksi lyöntivirheen tms. johdosta (tämä osa tietokannan toiminnallisuutta on harkinnassa, mutta se on  nyt lisätty ainakin toistaiseksi täyden CRUD-toiminnallisuuden toteuttamiseksi).
 
