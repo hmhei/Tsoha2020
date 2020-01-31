@@ -10,6 +10,8 @@ Käyttäjänä haluan lisätä uuden lainan, jotta kirjasto tietää lainanneeni
 
 Käyttäjänä haluan merkitä lainan palautetuksi, jotta kirjasto tietää palauttaneeni kirjan.
 
+Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään.
+
 ## TOTEUTTAMATTA
 
 Käyttäjänä haluan pystyä lukemaan kirjaston tietokannassa olevat kirjat, jotta voin nähdä, mitä kirjoja kirjastossa on olemassa.
