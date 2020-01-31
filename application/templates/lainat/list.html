@@ -1,20 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
+  <table cellspacing="2">
     <tr>
-      <th>Lainattu kirja</th>
-      <th>Palautettu</th>
+      <th width="200" align="left">Lainattu kirja</th>
+      <th width="180">Palautettu</th>
       <th></th>
     </tr>
     {% for laina in lainat %}
     <tr>
       <td>{{ laina.name }}</td>
-      <td>{{ laina.done }}</td>
+      <td align="center">{{ laina.done }}</td>
       <td>
-	<form method="POST" action="{{ url_for('lainat_set_done', laina_id=laina.id) }}">
-	  <input type="submit" value="Merkitse palautetuksi!"/>
-	</form>
+        <form method="POST" action="{{ url_for('lainat_set_done', laina_id=laina.id) }}">
+          <input type="submit" value="Palauta"/>
+        </form>
+      </td>
+      <td>
+        <form method="GET" action="{{ url_for('lainat_delete', laina_id=laina.id) }}">
+          <input type="submit" value="Poista"/>
+        </form>
       </td>
     </tr>
     {% endfor %}

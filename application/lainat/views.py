@@ -6,7 +6,6 @@ from application.lainat.models import Laina
 from application.lainat.forms import LainaForm
 
 @app.route("/lainat/", methods=["GET"])
-@login_required
 def lainat_index():
     return render_template("lainat/list.html", lainat = Laina.query.all())
 
@@ -22,7 +21,17 @@ def lainat_set_done(laina_id):
     l = Laina.query.get(laina_id)
     l.done = True
     db.session().commit()
-  
+
+    return redirect(url_for("lainat_index"))
+
+@app.route("/delete/<laina_id>/", methods=["GET"])
+@login_required
+def lainat_delete(laina_id):
+
+    l = Laina.query.get(laina_id)
+    db.session().delete(l)
+    db.session().commit()
+
     return redirect(url_for("lainat_index"))
 
 @app.route("/lainat/", methods=["POST"])
