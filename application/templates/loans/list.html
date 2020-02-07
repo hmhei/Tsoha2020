@@ -3,14 +3,14 @@
 {% block body %}
   <table cellspacing="2">
     <tr>
-      <th width="200" align="left">Lainattu kirja</th>
-      <th width="180">Palautettu</th>
+      <th width="250" align="left">Lainattu kirja</th>
+      <th width="150" align="left">Palautettu</th>
       <th></th>
     </tr>
     {% for loan in loans %}
     <tr>
       <td>{{ loan.name }}</td>
-      <td align="center">{{ loan.returned }}</td>
+      <td align="left">{{ loan.returned }}</td>
       <td>
         <form method="POST" action="{{ url_for('loans_set_returned', loan_id=loan.id) }}">
           <input type="submit" value="Palauta"/>
