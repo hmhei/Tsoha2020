@@ -39,4 +39,4 @@ def auth_register():
         db.session().add(n)
         db.session().commit()
   
-        return redirect(url_for("lainat_index"))
+        return redirect(url_for("loans_index"))

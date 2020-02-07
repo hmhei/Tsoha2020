@@ -8,15 +8,15 @@ import os
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
 else:    
-    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///lainat.db"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///loans.db"
     app.config["SQLALCHEMY_ECHO"] = True
 
 db = SQLAlchemy(app)
 
 from application import views
 
-from application.lainat import models
-from application.lainat import views
+from application.loans import models
+from application.loans import views
 
 from application.auth import models
 from application.auth import views
