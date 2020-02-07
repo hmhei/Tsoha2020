@@ -10,9 +10,9 @@
     {% for loan in loans %}
     <tr>
       <td>{{ loan.name }}</td>
-      <td align="center">{{ loan.done }}</td>
+      <td align="center">{{ loan.returned }}</td>
       <td>
-        <form method="POST" action="{{ url_for('loans_set_done', loan_id=loan.id) }}">
+        <form method="POST" action="{{ url_for('loans_set_returned', loan_id=loan.id) }}">
           <input type="submit" value="Palauta"/>
         </form>
       </td>

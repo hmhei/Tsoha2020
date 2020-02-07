@@ -4,4 +4,20 @@
   <p>
     Tervetuloa käyttämään lainausjärjestelmää!
   </p>
+
+  {% if has_loans is defined %}
+  <p>
+    Seuraavilla käyttäjillä on lainoja:
+  </p>
+
+  <ul>
+    {% for user in has_loans %}
+    <li>
+      {{user.id}} {{user.name}}
+    </li>
+    {% endfor %}
+  </ul>
+
+  {% endif %}
+
 {% endblock %}

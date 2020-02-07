@@ -17,10 +17,10 @@ def loans_form():
   
 @app.route("/loans/<loan_id>/", methods=["POST"])
 @login_required
-def loans_set_done(loan_id):
+def loans_set_returned(loan_id):
 
     l = Loan.query.get(loan_id)
-    l.done = True
+    l.returned = True
     db.session().commit()
 
     return redirect(url_for("loans_index"))
@@ -44,7 +44,7 @@ def loans_create():
         return render_template("loans/new.html", form = form)
 
     l = Loan(form.name.data)
-    l.done = form.returned.data
+    l.returned = form.returned.data
     l.account_id = current_user.id
 
     db.session().add(l)
