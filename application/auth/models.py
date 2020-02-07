@@ -32,11 +32,11 @@ class User(Base):
 
     @staticmethod
     def find_users_with_no_loans():
-        stmt = text("SELECT Account.id, Account.name FROM Account"
-                    " LEFT JOIN Loan ON Loan.account_id = Account.id"
-                    " WHERE (Loan.returned = 0)"
-                    " GROUP BY Account.id"
-                    " HAVING COUNT(Loan.id) > 0")
+        stmt = text("SELECT account.id, account.name FROM account"
+                    " LEFT JOIN loan ON loan.account_id = account.id"
+                    " WHERE (loan.returned = 0)"
+                    " GROUP BY account.id"
+                    " HAVING COUNT(loan.id) > 0")
         res = db.engine.execute(stmt)
   
         response = []
