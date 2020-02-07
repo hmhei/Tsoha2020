@@ -36,7 +36,7 @@ class User(Base):
                     " LEFT JOIN loan ON Loan.account_id = Account.id"
                     " WHERE (Loan.returned = false)"
                     " GROUP BY Account.id"
-                    " HAVING COUNT(Aoan.id) > 0")
+                    " HAVING COUNT(Loan.id) > 0")
         res = db.engine.execute(stmt)
   
         response = []
