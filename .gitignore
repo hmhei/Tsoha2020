@@ -129,5 +129,6 @@ dmypy.json
 .pyre/
 
 # Others
-/application/loans.db
+*.sqlite3
 .vscode
+*.db
