@@ -34,7 +34,7 @@ class User(Base):
     def find_users_with_no_loans():
         stmt = text("SELECT Account.id, Account.name FROM account"
                     " LEFT JOIN loan ON Loan.account_id = Account.id"
-                    " WHERE (Loan.returned = false)"
+                    " WHERE (Loan.returned = 0)"
                     " GROUP BY Account.id"
                     " HAVING COUNT(Loan.id) > 0")
         res = db.engine.execute(stmt)
