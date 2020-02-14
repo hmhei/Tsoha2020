@@ -16,7 +16,7 @@ def books_form():
     return render_template("books/new.html", form = BookForm())
 
 @app.route("/books/delete/<book_id>/", methods=["GET"])
-@login_required
+@login_required(role="ADMIN")
 def books_delete(book_id):
 
     book = Book.query.get(book_id)

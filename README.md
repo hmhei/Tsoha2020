@@ -9,7 +9,11 @@ Kirjaston järjestelmässä kaksi erityyppistä tiliä:
   * käyttäjä eli asiakas (rajatut oikeudet), ja
   * ylläpitäjä (täydet oikeudet).
 
-Kuka tahansa voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi).
+Ylläpitäjän testitunnukset:
+  * Käyttäjänimi: admin
+  * Salasana: admintest
+
+Kuka tahansa voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi). Ainoastaan ylläpitäjä voi lisätä tai poistaa kirjoja kirjaston valikoimasta.
 
 ## TOIMINTOJA:
 
