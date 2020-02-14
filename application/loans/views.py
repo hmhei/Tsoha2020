@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required, login_manager
 from application.loans.models import Loan
 from application.loans.forms import LoanForm
 
@@ -20,6 +20,10 @@ def loans_form():
 def loans_set_returned(loan_id):
 
     loan = Loan.query.get(loan_id)
+    
+    if loan.account_id != current_user.id:
+        return login_manager.unauthorized()
+    
     loan.returned = True
     db.session().commit()
 
@@ -30,6 +34,10 @@ def loans_set_returned(loan_id):
 def loans_delete(loan_id):
 
     loan = Loan.query.get(loan_id)
+
+    if loan.account_id != current_user.id:
+        return login_manager.unauthorized()
+
     db.session().delete(loan)
     db.session().commit()
 

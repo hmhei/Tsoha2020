@@ -1,7 +1,7 @@
 from flask import redirect, render_template, request, url_for
-from flask_login import login_required, current_user
+from flask_login import current_user
 
-from application import app, db
+from application import app, db, login_required
 from application.books.models import Book
 from application.books.forms import BookForm
 
@@ -26,7 +26,7 @@ def books_delete(book_id):
     return redirect(url_for("books_index"))
 
 @app.route("/books/", methods=["POST"])
-@login_required
+@login_required(role="ADMIN")
 def books_create():
     form = BookForm(request.form)
 
