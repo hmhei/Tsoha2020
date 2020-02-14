@@ -19,18 +19,18 @@ def loans_form():
 @login_required
 def loans_set_returned(loan_id):
 
-    l = Loan.query.get(loan_id)
-    l.returned = True
+    loan = Loan.query.get(loan_id)
+    loan.returned = True
     db.session().commit()
 
     return redirect(url_for("loans_index"))
 
-@app.route("/delete/<loan_id>/", methods=["GET"])
+@app.route("/loans/delete/<loan_id>/", methods=["GET"])
 @login_required
 def loans_delete(loan_id):
 
-    l = Loan.query.get(loan_id)
-    db.session().delete(l)
+    loan = Loan.query.get(loan_id)
+    db.session().delete(loan)
     db.session().commit()
 
     return redirect(url_for("loans_index"))
@@ -43,11 +43,11 @@ def loans_create():
     if not form.validate():
         return render_template("loans/new.html", form = form)
 
-    l = Loan(form.name.data)
-    l.returned = form.returned.data
-    l.account_id = current_user.id
+    loan = Loan(form.name.data)
+    loan.returned = form.returned.data
+    loan.account_id = current_user.id
 
-    db.session().add(l)
+    db.session().add(loan)
     db.session().commit()
   
     return redirect(url_for("loans_index"))

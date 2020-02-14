@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table cellspacing="2">
+    <tr>
+      <th width="250" align="left">Kirjan nimi</th>
+      <th width="150" align="left">Julkaisuvuosi</th>
+      <th></th>
+    </tr>
+    {% for book in books %}
+    <tr>
+      <td>{{ book.name }}</td>
+      <td align="left">{{ book.published }}</td>
+      <td>
+        <form method="GET" action="{{ url_for('books_delete', book_id=book.id) }}">
+          <input type="submit" value="Poista"/>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

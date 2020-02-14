@@ -38,6 +38,12 @@
             <li>
               <a class="nav-link" href="{{ url_for('loans_form') }} ">Lisää laina</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('books_index') }} ">Listaa kirjat</a>
+            </li>
+            <li>
+              <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää kirja</a>
+            </li>
           </ul>
           <div class="form-inline mt-2 mt-md-0">
             {% if current_user.is_authenticated %}
