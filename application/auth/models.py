@@ -59,14 +59,15 @@ class User(Base):
     @staticmethod
     def list_users_with_loans_and_loans_amount(returned=False):
         stmt = text("SELECT Account.id, Account.name, COUNT(*) FROM account"
-                    " LEFT JOIN loan ON Loan.account_id = Account.id"
+                    " INNER JOIN loan ON Loan.account_id = Account.id"
                     " WHERE (Loan.returned IS null OR Loan.returned = :returned)"
-                    " GROUP BY Account.name"
-                    " HAVING COUNT(Loan.id) > 0").params(returned=returned)
+                    " GROUP BY Account.id"
+                    " HAVING COUNT(Loan.id) > 0"
+                    " ORDER BY Account.name").params(returned=returned)
         res = db.engine.execute(stmt)
 
         response = []
         for row in res:
-            response.append({"name":row[1], "loans":row[2]})
+            response.append({"id":row[0], "name":row[1], "loans":row[2]})
 
         return response
