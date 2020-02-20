@@ -59,7 +59,7 @@ class User(Base):
     @staticmethod
     def list_users_with_loans_and_loans_amount(returned=False):
         stmt = text("SELECT Account.id, Account.name, COUNT(*) FROM account"
-                    " LEFT JOIN loan on Loan.account_id = Account.id"
+                    " LEFT JOIN loan ON Loan.account_id = Account.id"
                     " WHERE (Loan.returned IS null OR Loan.returned = :returned)"
                     " GROUP BY Account.name"
                     " HAVING COUNT(Loan.id) > 0").params(returned=returned)
