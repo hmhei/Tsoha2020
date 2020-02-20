@@ -38,8 +38,11 @@ class User(Base):
         else:
             return ["ADMIN"]
 
+    def is_admin(self):
+        return self.admin
+
     @staticmethod
-    def find_users_with_no_loans(returned=False):
+    def list_users_with_loans(returned=False):
         stmt = text("SELECT Account.id, Account.name FROM account"
                     " LEFT JOIN loan ON Loan.account_id = Account.id"
                     " WHERE (Loan.returned IS null OR Loan.returned = :returned)"
@@ -50,5 +53,20 @@ class User(Base):
         response = []
         for row in res:
             response.append({"id":row[0], "name":row[1]})
+
+        return response
+
+    @staticmethod
+    def list_users_with_loans_and_loans_amount(returned=False):
+        stmt = text("SELECT Account.id, Account.name, COUNT(*) FROM account"
+                    " LEFT JOIN loan on Loan.account_id = Account.id"
+                    " WHERE (Loan.returned IS null OR Loan.returned = :returned)"
+                    " GROUP BY Account.name"
+                    " HAVING COUNT(Loan.id) > 0").params(returned=returned)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"name":row[1], "loans":row[2]})
 
         return response
