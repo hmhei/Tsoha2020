@@ -28,7 +28,8 @@ class Book(Base):
         stmt = text("SELECT Author.name FROM author"
                     " INNER JOIN book_authors ON book_authors.author_id = Author.id"
                     " LEFT JOIN book ON Book.id = book_authors.book_id)"
-                    " WHERE Book.id = :bookid").params(bookid=bookid)
+                    " WHERE Book.id = :bookid"
+                    " GROUP BY Book.id").params(bookid=bookid)
         res = db.engine.execute(stmt)
 
         response = []
