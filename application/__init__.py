@@ -55,6 +55,8 @@ from application.auth import views
 from application.books import models
 from application.books import views
 
+from application.authors import models
+
 # login functionality, part 2
 from application.auth.models import User
 

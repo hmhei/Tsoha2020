@@ -4,14 +4,30 @@
   <table cellspacing="2">
     <tr>
       <th width="250" align="left">Kirjan nimi</th>
+      <th width="250" align="left">Kirjailija</th>
       <th width="150" align="left">Julkaisuvuosi</th>
+      <th width="150" alight="left">Lukumäärä</th>
       <th></th>
     </tr>
     {% for book in books %}
     <tr>
       <td>{{ book.name }}</td>
+      {% if list_authors is defined %}
+      <td>
+        <ul>
+          {% for book in list_authors %}
+          <li>
+            {{book.authors}}
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+      {% else %}
+      <td>{{ book.author }}</td>
+      {% endif %}
       <td align="left">{{ book.published }}</td>
-      {% if current_user.is_admin %}
+      <td>{{ book.count }}</td>
+      {% if current_user.is_admin() %}
       <td>
         <form method="GET" action="{{ url_for('books_delete', book_id=book.id) }}">
           <input type="submit" value="Poista"/>
@@ -19,7 +35,7 @@
       </td>
       {% else %}
       <td>
-        <form method="GET" action="{{ url_for('books_delete', book_id=book.id) }}">
+        <form method="GET" action="{{ url_for('books_loan', book_id=book.id) }}">
           <input type="submit" value="Lainaa"/>
         </form>
       </td>

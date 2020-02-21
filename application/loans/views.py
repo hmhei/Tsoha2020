@@ -8,7 +8,8 @@ from application.loans.forms import LoanForm
 @app.route("/loans/", methods=["GET"])
 @login_required
 def loans_index():
-    return render_template("loans/list.html", loans = Loan.query.all())
+    return render_template("loans/list.html", 
+    loans = Loan.query.filter_by(account_id = current_user.id).all())
 
 @app.route("/loans/new/")
 @login_required

@@ -37,9 +37,9 @@ def auth_register():
         if not form.validate():
             return render_template("auth/registerform.html", form = form)
 
-        n = User(form.name.data, form.username.data, form.password.data, False)
+        new = User(form.name.data, form.username.data, form.password.data, False)
 
-        db.session().add(n)
+        db.session().add(new)
         db.session().commit()
   
         return redirect(url_for("loans_index"))

@@ -20,6 +20,21 @@
     </tr>
     <tr>
       <td>
+        {{ form.author.label }}
+      </td>
+      <td>
+        {{ form.author }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.author.errors %}
+          <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
         {{ form.published.label }}
       </td>
       <td>
@@ -29,6 +44,21 @@
         <ul>
           {% for error in form.published.errors %}
           <li>{{ error }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{ form.count.label }}
+      </td>
+      <td>
+        {{ form.count }}
+      </td>
+      <td>
+        <ul>
+          {% for error in form.count.errors %}
+          <li>{{ error }}</li>
           {% endfor %}
         </ul>
       </td>
