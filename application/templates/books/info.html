@@ -32,10 +32,20 @@
 <p>
     {{ book.desc }}
 </p>
-{% if current_user.is_admin() %}
-<p>
-    
-</p>
-{% endif %}
+<table>
+    <tr>
+        <td>
+            <a href="{{ url_for('books_index') }}">
+                <input type="button" value="Palaa"/>
+              </a>
+        </td>
+        {% if current_user.is_admin() %}
+        <td>
+            <form method="GET" action="{{ url_for('books_modify', book_id=book.id) }}">
+                <input type="submit" value="Muokkaa"/>
+        </td>
+        {% endif %}
+    </tr>
+</table>
 
 {% endblock %}

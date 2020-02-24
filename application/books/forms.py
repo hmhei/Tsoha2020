@@ -6,7 +6,7 @@ class BookForm(FlaskForm):
     author = StringField("Kirjailija", [validators.Length(min=5, max=30)])
     published = IntegerField("Julkaisuvuosi", [validators.NumberRange(min=1800, max=2020)])
     count = IntegerField("Lukumäärä", [validators.NumberRange(min=1, max=10)])
-    desc = TextAreaField("Kuvaus", [validators.Length(min=10, max=500)])
+    desc = TextAreaField("Kuvaus", [validators.Length(min=10, max=1000)])
 
     class Meta:
         csrf = False

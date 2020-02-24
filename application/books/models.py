@@ -16,7 +16,7 @@ class Book(Base):
         "Author", secondary=bookAuthor, backref='book_author', lazy=True, cascade="delete")
     published = db.Column(db.Integer, nullable=False)
     count = db.Column(db.Integer, nullable=False)
-    desc = db.Column(db.String(550), nullable=False)
+    desc = db.Column(db.String(1050), nullable=False)
     
     # author_id = db.Column(db.Integer, db.ForeignKey('author.id'), nullable=False)
 

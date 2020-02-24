@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
   
 {% block body %}
-<form method="POST" action="{{ url_for('books_create') }}">
+{% if num != 0 %}
+  <form method="POST" action="{{ url_for('books_save', book_id=num) }}">
+{% else %}
+  <form method="POST" action="{{ url_for('books_create') }}">
+{% endif %}
   <table>
     <tr>
       <td>
@@ -79,10 +83,14 @@
       </td>
     </tr>
     <tr>
-      <td colspan="2">
-        <input type="submit" value="Lisää uusi kirja"/>
+      <td>
+        <input type="submit" value="Tallenna"/>
+      </td>
+      <td>
+        <a href="{{ url_for('books_index') }}">
+          <input type="button" value="Peru"/>
+        </a>
       </td>
     </tr>  
 </form>
 {% endblock %}
-

@@ -6,13 +6,17 @@
       <th width="350">Kirjan nimi</th>
       <th width="150">Julkaisuvuosi</th>
       <th width="150">Lukumäärä</th>
-      <th></th>
     </tr>
     {% for book in books %}
     <tr>
       <td>{{ book.name }}</td>
-      <td align="left">{{ book.published }}</td>
+      <td>{{ book.published }}</td>
       <td>{{ book.count }}</td>
+      <td>
+        <form method="GET" action="{{ url_for('books_info', book_id=book.id) }}">
+          <input type="submit" value="Tiedot"/>
+        </form>
+      </td>
       {% if current_user.is_admin() %}
       <td>
         <form method="GET" action="{{ url_for('books_delete', book_id=book.id) }}">
@@ -26,10 +30,6 @@
         </form>
       </td>
       {% endif %}
-      <td>
-        <form method="GET" action="{{ url_for('books_authors', book_id=book.id) }}">
-          <input type="submit" value="Tiedot"
-      </td>
     </tr>
     {% endfor %}
   </table>
