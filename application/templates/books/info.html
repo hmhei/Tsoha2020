@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+    <b>Kirjan nimi:</b>
+</p>
+<p>
+    {{ book.name }}
+</p>
+
+{% if list_authors is defined %}
+{% for book in list_authors %}
+
+<p>
+    <b>Kirjailija:</b>
+</p>
+<p>
+    {{ book.name }}
+</p>
+
+{% endfor %}
+{% endif %}
+<p>
+    <b>Julkaisuvuosi:</b>
+</p>
+<p>
+    {{ book.published }}
+</p>
+<p>
+    <b>Tarkempi kuvaus / juonitiivistelmä:</b>
+</p>
+<p>
+    {{ book.desc }}
+</p>
+{% if current_user.is_admin() %}
+<p>
+
+</p>
+{% endif %}
+
+{% endblock %}
