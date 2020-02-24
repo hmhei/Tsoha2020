@@ -1,5 +1,6 @@
 from flask import redirect, render_template, request, url_for
 from flask_login import current_user
+import datetime
 
 from application import app, db, login_required
 from application.books.models import Book
@@ -44,6 +45,9 @@ def books_loan(book_id):
     if book.count > 0:
         book.count = book.count - 1
         loan = Loan(book.name)
+        dt = datetime.datetime.now()
+        dd = dt + datetime.timedelta(days=14)
+        loan.due_date = dd.strftime('%d.%m.%Y')
         loan.account_id = current_user.id
         db.session().add(loan)
         db.session().commit()
