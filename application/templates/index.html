@@ -1,23 +1,43 @@
 {% extends "layout.html" %}
 
 {% block body %}
+{% if not current_user.is_authenticated %}
   <p>
     Tervetuloa käyttämään lainausjärjestelmää!
   </p>
-
-  {% if has_loans is defined %}
   <p>
-    Seuraavilla käyttäjillä on kirjoja lainassa:
+    Ole hyvä ja kirjaudu sisään.
+    Mikäli et ole vielä rekisteröitynyt, ole hyvä ja suorita rekisteröinti ensin.
   </p>
+{% endif %}
+  {% if current_user.is_authenticated %}
+    {% if current_user.is_admin() %}
+      <p>
+        Lainausjärjestelmän ylläpitäjänä voit tarkastella kirjaston kirjalistaa, muokata kirjojen tietoja sekä poistaa kirjoja valikoimasta.
+        Voit myös luoda uusia kirjoja tietokantaan.
+      </p>
+      <p>
+        Tämän lisäksi voit tarkastella ja muokata järjestelmän käyttäjien tietoja, luoda uusia käyttäjiä sekä poistaa käyttäjien tiedot järjestelmästä (esimerkiksi käyttäjän pyynnöstä).
+      </p>
 
-  <ul>
-    {% for user in has_loans %}
-    <li>
-      <b>{{user.name}}</b>, {{user.loans}} kpl lainoja
-    </li>
-    {% endfor %}
-  </ul>
+      {% if has_loans is defined %}
+      <p>
+        Seuraavilla käyttäjillä on tällä hetkellä kirjoja lainassa:
+      </p>
 
+      <ul>
+        {% for user in has_loans %}
+        <li>
+          <b>{{user.name}}</b>, {{user.loans}} kpl lainoja
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% else %}
+      <p>
+        Tämän lainausjärjestelmän käyttäjänä voit tarkastella kirjastossa olevia kirjoja ja niiden tietoja, tehdä lainoja, sekä muokata omia tietojasi.
+      </p>   
+    {% endif %}
   {% endif %}
 
 {% endblock %}

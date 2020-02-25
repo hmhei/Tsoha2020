@@ -37,7 +37,8 @@ def auth_register():
         if not form.validate():
             return render_template("auth/registerform.html", form = form)
 
-        new = User(form.name.data, form.username.data, form.password.data, False)
+        new = User(form.name.data, form.username.data, form.password.data, 
+        form.address.data, form.phone.data, False)
 
         db.session().add(new)
         db.session().commit()
@@ -52,6 +53,8 @@ def auth_modify():
 
     form.name.data = user.name
     form.username.data = user.username
+    form.address.data = user.address
+    form.phone.data = user.phone
 
     return render_template("auth/modifyform.html", form=form)
 
@@ -69,6 +72,8 @@ def auth_save():
     user.name = form.name.data
     user.username = form.username.data
     user.password = form.password.data
+    user.address = form.address.data
+    user.phone = form.phone.data
 
     db.session().commit()
 

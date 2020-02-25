@@ -50,6 +50,36 @@
             </td>
         </tr>
         <tr>
+            <td>
+                {{ form.address.label }}
+            </td>
+            <td>
+                {{ form.address }}
+            </td>
+            <td>
+                <ul>
+                    {% for error in form.address.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form.phone.label }}
+            </td>
+            <td>
+                {{ form.phone }}
+            </td>
+            <td>
+                <ul>
+                    {% for error in form.phone.errors %}
+                    <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+        <tr>
             <td colspan="2">
                 <input type="submit" value="Rekisteröidy"/>
             </td>

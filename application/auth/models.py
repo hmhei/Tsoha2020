@@ -10,14 +10,18 @@ class User(Base):
     name = db.Column(db.String(144), nullable=False)
     username = db.Column(db.String(144), nullable=False)
     password = db.Column(db.String(144), nullable=False)
+    address = db.Column(db.String(144), nullable=False)
+    phone = db.Column(db.String(144), nullable=False)
     admin = db.Column(db.Boolean, nullable=False)
 
     loans = db.relationship("Loan", backref='account', lazy=True)
 
-    def __init__(self, name, username, password, admin):
+    def __init__(self, name, username, password, address, phone, admin):
         self.name = name
         self.username = username
         self.password = password
+        self.address = address
+        self.phone = phone
         self.admin = admin
 
     def get_id(self):

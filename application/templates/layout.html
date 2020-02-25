@@ -20,21 +20,26 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('loans_index') }} ">Listaa lainat</a>
-            </li>
-      <!--  <li>
-              <a class="nav-link" href="{{ url_for('loans_form') }} ">Lisää laina</a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('books_index') }} ">Listaa kirjat</a>
-            </li>
-            <li>
-              <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää kirja</a>
-            </li>
-            <li>
-              <a class="nav-link" href="{{ url_for('auth_modify') }} ">Omat tiedot</a>
-            </li>
+            {% if current_user.is_authenticated %}
+              {% if current_user.is_admin() %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('books_index') }} ">Listaa kirjat</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{{ url_for('books_form') }} ">Lisää kirja</a>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('loans_index') }} ">Listaa lainat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('books_index') }} ">Listaa kirjat</a>
+              </li>
+              <li>
+                <a class="nav-link" href="{{ url_for('auth_modify') }} ">Omat tiedot</a>
+              </li>
+              {% endif %}
+            {% endif %}
           </ul>
           <div class="form-inline mt-2 mt-md-0">
             {% if current_user.is_authenticated %}
