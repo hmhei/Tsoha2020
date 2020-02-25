@@ -53,4 +53,23 @@ def auth_modify():
     form.name.data = user.name
     form.username.data = user.username
 
-    return render_template("auth/registerform.html", form=form)
+    return render_template("auth/modifyform.html", form=form)
+
+@app.route("/auth/modify/", methods = ["POST"])
+@login_required(role="USER")
+def auth_save():
+    
+    form = RegisterForm(request.form)
+
+    if not form.validate():
+        return render_template("auth/modifyform.html", form = form)
+    
+    user = User.query.filter_by(id = current_user.id).first()
+    
+    user.name = form.name.data
+    user.username = form.username.data
+    user.password = form.password.data
+
+    db.session().commit()
+
+    return redirect(url_for("index"))
