@@ -3,7 +3,10 @@
 {% block body %}
 {{ error }}
 <form method="POST" action="{{ url_for('auth_login') }}">
-    <table>
+    <p>
+        Toiminto ei saatavilla nykyisillä tunnuksillasi.
+    </p>
+    <table>       
         <tr>
             <td>
                 {{ form.username.label }}

@@ -6,7 +6,7 @@ from application.loans.models import Loan
 from application.loans.forms import LoanForm
 
 @app.route("/loans/", methods=["GET"])
-@login_required
+@login_required(role="USER")
 def loans_index():
     return render_template("loans/list.html", 
     loans = Loan.query.filter_by(account_id = current_user.id).all())
@@ -39,8 +39,9 @@ def loans_delete(loan_id):
     if loan.account_id != current_user.id:
         return login_manager.unauthorized()
 
-    db.session().delete(loan)
-    db.session().commit()
+    if loan.returned == True:
+        db.session().delete(loan)
+        db.session().commit()
 
     return redirect(url_for("loans_index"))
 

@@ -60,7 +60,7 @@ def books_save(book_id):
     return redirect(url_for("books_index"))
 
 @app.route("/books/new/")
-@login_required
+@login_required(role="ADMIN")
 def books_form():
     return render_template("books/new.html", form = BookForm(), num=0)
 
