@@ -18,7 +18,8 @@ class Book(Base):
     count = db.Column(db.Integer, nullable=False)
     desc = db.Column(db.String(1050), nullable=False)
     
-    # author_id = db.Column(db.Integer, db.ForeignKey('author.id'), nullable=False)
+    #loan_id = db.Column(db.Integer, db.ForeignKey('loan.id'), nullable=False)
+    loans = db.relationship("Loan", backref='book', lazy=True)
 
     def __init__(self, name):
         self.name = name

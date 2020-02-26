@@ -4,6 +4,7 @@ from flask_login import current_user
 from application import app, db, login_required, login_manager
 from application.loans.models import Loan
 from application.loans.forms import LoanForm
+from application.books.models import Book
 
 @app.route("/loans/", methods=["GET"])
 @login_required(role="USER")
@@ -21,11 +22,13 @@ def loans_form():
 def loans_set_returned(loan_id):
 
     loan = Loan.query.get(loan_id)
+    book = Book.query.get(loan.book_id)
     
     if loan.account_id != current_user.id:
         return login_manager.unauthorized()
     
     loan.returned = True
+    book.count = book.count + 1
     db.session().commit()
 
     return redirect(url_for("loans_index"))

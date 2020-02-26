@@ -74,7 +74,7 @@ def books_delete(book_id):
 
     return redirect(url_for("books_index"))
 
-@app.route("/books/loan/<book_id>/", methods=["GET"])
+@app.route("/books/loan/<book_id>/", methods=["POST"])
 @login_required
 def books_loan(book_id):
 
@@ -83,6 +83,7 @@ def books_loan(book_id):
     if book.count > 0:
         book.count = book.count - 1
         loan = Loan(book.name)
+        loan.book_id = book.id
         dt = datetime.datetime.now()
         dd = dt + datetime.timedelta(days=14)
         loan.due_date = dd.strftime('%d.%m.%Y')

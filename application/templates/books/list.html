@@ -25,7 +25,7 @@
       </td>
       {% else %}
       <td>
-        <form method="GET" action="{{ url_for('books_loan', book_id=book.id) }}">
+        <form method="POST" action="{{ url_for('books_loan', book_id=book.id) }}">
           <input type="submit" value="Lainaa"/>
         </form>
       </td>
