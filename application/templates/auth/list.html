@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <p>
+    HUOM! Käyttäjää ei voi poistaa, mikäli tällä on voimassa olevia lainoja tai poistamattomia lainan palautuksia.
+  </p>
+  <p>
+    Ylläpitäjän tiliä ei pidä pystyä muokkaamaan tai poistamaan.
+  </p>
+  <table cellspacing="2">
+    <tr>
+      <th width="250">Käyttäjänimi</th>
+      <th width="200">Käyttäjätunnus</th>
+      <th width="150">Ylläpitäjä</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.admin }}</td>
+      {% if user.admin == False %}
+      <td>
+        <form method="GET" action="{{ url_for('auth_info', user_id=user.id) }}">
+          <input type="submit" value="Tiedot"/>
+        </form>
+      </td>
+      <td>
+        <form method="GET" action="{{ url_for('auth_delete', user_id=user.id) }}">
+          <input type="submit" value="Poista"/>
+        </form>
+      </td>
+      {% endif %}
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
