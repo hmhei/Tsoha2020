@@ -7,40 +7,51 @@
   </p>
   <p>
     Ole hyvä ja kirjaudu sisään.
-    Mikäli et ole vielä rekisteröitynyt, ole hyvä ja suorita rekisteröinti ensin.
+  </p>
+  <p>
+    <u>Käyttäjä</u>: Mikäli et ole vielä rekisteröitynyt, ole hyvä ja suorita rekisteröinti ensin.
+  </p>
+  <p>
+    <u>Ylläpitäjä</u>: Kirjaudu sisään ohjeistuksessa annetuilla ylläpitäjätunnuksilla.
   </p>
 {% endif %}
-  {% if current_user.is_authenticated %}
-    {% if current_user.is_admin() %}
-      <p>
-        Lainausjärjestelmän ylläpitäjänä voit tarkastella kirjaston kirjalistaa, <b>lukea</b> kirjojen tietoja ja <b>muokata</b> niitä.
-      </p>
-      <p>
-        Kirjojen tiedoista näet kirjojen tämänhetkisen laina- ja palautustilanteen. Tällä sivulla on lisäksi kooste kunkin käyttäjän lainassa
-        olevien kirjojen määristä, mikäli heillä on voimassaolevia lainoja.
-      </p>
-        Voit myös <b>luoda</b> uusia kirjoja tietokantaan, ja <b>poistaa</b> kirjoja valikoimasta (mikäli niihin ei kohdistu lainoja).
-      </p>
 
-      {% if has_loans is defined %}
-      <p>
-        <b><u>Seuraavilla käyttäjillä on tällä hetkellä kirjoja lainassa:</u></b>
-      </p>
+{% if current_user.is_authenticated %}
+  {% if current_user.is_admin() %}
+    <p>
+      Lainausjärjestelmän ylläpitäjänä voit tarkastella kirjaston kirjalistaa, <b>lukea</b> kirjojen tietoja ja <b>muokata</b> niitä.
+    </p>
+    <p>
+      Voit myös <b>luoda</b> uusia kirjoja tietokantaan, ja <b>poistaa</b> kirjoja valikoimasta (mikäli niihin ei kohdistu lainoja).
+    </p>
+    <p>
+      Kirjojen tiedot -sivulta näet kunkin kirjan tämänhetkisen laina- ja palautustilanteen.
+    </p>
+    <p>
+      Tämän sivun lopussa on lisäksi kooste kunkin käyttäjän lainassa olevien kirjojen määristä, mikäli heillä on voimassaolevia lainoja.
+    </p>
+    <p>
+      <b><u>Seuraavilla käyttäjillä on tällä hetkellä kirjoja lainassa</u>:</b>
+    </p>
 
-      <ul>
-        {% for user in has_loans %}
-        <li>
-          <b>{{user.name}}</b>, {{user.loans}} kpl
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-
-    {% else %}
-      <p>
-        Tämän lainausjärjestelmän käyttäjänä voit tarkastella kirjastossa olevia kirjoja ja niiden tietoja, tehdä lainoja, sekä muokata omia tietojasi.
-      </p>   
+    {% if has_loans is defined %}
+    <ul>
+      {% for user in has_loans %}
+      <li>
+        <b>{{user.name}}</b>, {{user.loans}} kpl
+      </li>
+      {% endfor %}
+    </ul>
     {% endif %}
+
+  {% else %}
+    <p>
+      Lainausjärjestelmän käyttäjänä voit tarkastella omia lainojasi sekä kirjastossa olevia kirjoja ja niiden tietoja.
+    </p>
+    <p>
+      Voit lainata kirjoja kirjalistalta, merkitä lainat palautetuiksi, poistaa palautetut lainat lainalistastasi, sekä muokata omia käyttäjätietojasi.
+    </p>   
   {% endif %}
+{% endif %}
 
 {% endblock %}
