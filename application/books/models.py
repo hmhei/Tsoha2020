@@ -39,3 +39,33 @@ class Book(Base):
             response.append({"name": row[0]})
 
         return response
+
+    @staticmethod
+    def loans_count(bookid, returned=False):
+        stmt = text("SELECT COUNT(*) "
+                    "FROM loan " 
+                    "JOIN book ON Book.id = Loan.book_id "
+                    "WHERE Book.id = :bookid AND Loan.returned = :returned "
+                    "GROUP BY Book.id").params(bookid=bookid, returned=returned)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"count": row[0]})
+
+        return response
+    
+    @staticmethod
+    def not_deleted_count(bookid, returned=True):
+        stmt = text("SELECT COUNT(*) "
+                    "FROM loan " 
+                    "JOIN book ON Book.id = Loan.book_id "
+                    "WHERE Book.id = :bookid AND Loan.returned = :returned "
+                    "GROUP BY Book.id").params(bookid=bookid, returned=returned)
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"notdeleted": row[0]})
+
+        return response

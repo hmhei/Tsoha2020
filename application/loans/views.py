@@ -27,9 +27,10 @@ def loans_set_returned(loan_id):
     if loan.account_id != current_user.id:
         return login_manager.unauthorized()
     
-    loan.returned = True
-    book.count = book.count + 1
-    db.session().commit()
+    if loan.returned == False:
+        loan.returned = True
+        book.count = book.count + 1
+        db.session().commit()
 
     return redirect(url_for("loans_index"))
 

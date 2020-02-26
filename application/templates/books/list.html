@@ -1,11 +1,20 @@
 {% extends "layout.html" %}
 
 {% block body %}
+  {% if current_user.is_admin() %}
+  <p>
+    HUOM! Kirjaa, johon kohdistuu lainoja tai jota ei ole poistettu käyttäjän 
+    lainalistalta, ei voi poistaa. Tämä on tarkoitettu toiminnallisuus.
+  </p>
+  <p>
+    Lainatilanteen voit tarkistaa kunkin kirjan tiedoista.
+  </p>
+  {% endif %}
   <table cellspacing="2">
     <tr>
       <th width="350">Kirjan nimi</th>
       <th width="150">Julkaisuvuosi</th>
-      <th width="150">Lukumäärä</th>
+      <th width="150">Hyllyssä (kpl)</th>
     </tr>
     {% for book in books %}
     <tr>

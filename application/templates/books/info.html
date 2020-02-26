@@ -20,6 +20,7 @@
 
 {% endfor %}
 {% endif %}
+
 <p>
     <b>Julkaisuvuosi:</b>
 </p>
@@ -32,6 +33,34 @@
 <p>
     {{ book.desc }}
 </p>
+<p>
+    <b>Hyllyssä:</b> {{ book.count }} kpl
+</p>
+
+{% if current_user.is_admin() %}
+    {% if loans_count is defined %}
+    {% for loan in loans_count %}
+
+    <p>
+        <b>Lainassa:</b> {{ loan.count }} kpl
+    </p>
+
+    {% endfor %}
+    {% endif %}
+
+    {% if not_deleted_count is defined %}
+    {% for loan in not_deleted_count %}
+
+    <p>
+        <b>Palautettu:</b> {{ loan.notdeleted }} kpl
+        <br>
+        (Kirja on palautettu, mutta sitä ei ole poistettu käyttäjän lainalistalta.)
+    </p>
+
+    {% endfor %}
+    {% endif %}
+{% endif %}
+
 <table>
     <tr>
         <td>

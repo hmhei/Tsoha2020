@@ -19,6 +19,8 @@ def books_index():
 def books_info(book_id):
     return render_template("books/info.html",
     list_authors=Book.list_authors(book_id),
+    loans_count=Book.loans_count(book_id),
+    not_deleted_count=Book.not_deleted_count(book_id),
     book = Book.query.get(book_id))
 
 @app.route("/books/modify/<book_id>", methods=["GET"])
@@ -69,8 +71,11 @@ def books_form():
 def books_delete(book_id):
 
     book = Book.query.get(book_id)
-    db.session().delete(book)
-    db.session().commit()
+    loancount = Loan.query.filter_by(book_id = book_id).count()
+
+    if loancount == 0:
+        db.session().delete(book)
+        db.session().commit()
 
     return redirect(url_for("books_index"))
 
