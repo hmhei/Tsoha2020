@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{{ error }}
-<form method="POST" action="{{ url_for('auth_adminsave', user_id=num) }}">
+{% if num != 0 %}
+    <form method="POST" action="{{ url_for('auth_adminsave', user_id=num) }}">
+{% else %}
+    <form method="POST" action="{{ url_for('auth_adminregister') }}">
+{% endif %}
     <table>
         <tr>
             <td>

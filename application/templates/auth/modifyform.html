@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
 {% block body %}
-{{ error }}
 <form method="POST" action="{{ url_for('auth_save') }}">
     <table>
         <tr>
@@ -86,6 +85,7 @@
             <td>
                 <a href="{{ url_for('index') }}">
                     <input type="button" value="Palaa"/>
+                </a>
             </td>
         </tr>
     </table>

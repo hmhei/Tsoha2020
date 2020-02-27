@@ -140,3 +140,23 @@ def auth_adminsave(user_id):
 
     return redirect(url_for("auth_index"))
 
+#ADMIN: Uuden käyttäjän luominen
+@app.route("/auth/list/register/", methods = ["GET", "POST"])
+@login_required(role="ADMIN")
+def auth_adminregister():
+    if request.method == "GET":
+        return render_template("auth/infoform.html", form = RegisterForm(), num = 0)
+
+    if request.method == "POST":
+        form = RegisterForm(request.form)
+
+        if not form.validate():
+            return render_template("auth/infoform.html", form = form, num = 0)
+
+        new = User(form.name.data, form.username.data, form.password.data, 
+        form.address.data, form.phone.data, False)
+
+        db.session().add(new)
+        db.session().commit()
+  
+        return redirect(url_for("auth_index"))

@@ -19,13 +19,19 @@
 {% if current_user.is_authenticated %}
   {% if current_user.is_admin() %}
     <p>
-      Lainausjärjestelmän ylläpitäjänä voit tarkastella kirjaston kirjalistaa, <b>lukea</b> kirjojen tietoja ja <b>muokata</b> niitä.
+      Lainausjärjestelmän ylläpitäjänä sinulla on CRUD-toiminnallisuus kahteen tietokantatauluun.
     </p>
-    <p>
-      Voit myös <b>luoda</b> uusia kirjoja tietokantaan, ja <b>poistaa</b> kirjoja valikoimasta (mikäli niihin ei kohdistu lainoja).
+    <p>  
+      Voit tarkastella kirjaston kirjalistaa, <b>lukea</b> kirjojen tietoja ja <b>muokata</b> niitä.
+      Voit <b>luoda</b> uusia kirjoja tietokantaan, ja <b>poistaa</b> kirjoja valikoimasta (mikäli niihin ei kohdistu lainoja).
     </p>
     <p>
       Kirjojen tiedot -sivulta näet kunkin kirjan tämänhetkisen laina- ja palautustilanteen.
+    </p>
+    <p>
+      Voit myös <b>luoda</b>, <b>lukea</b>, <b>muunnella</b> ja <b>poistaa</b> lainausjärjestelmän käyttäjiä ja heidän tietojaan.
+      Käyttäjän voi tällä hetkellä poistaa ainoastaan, mikäli tällä ei ole aktiivisia lainoja tai poistamatta olevia palautettuja kirjoja. 
+      Tätä toiminnallisuutta on mahdollista muokata/täydentää tarvittaessa myöhemmin.
     </p>
     <p>
       Tämän sivun lopussa on lisäksi kooste kunkin käyttäjän lainassa olevien kirjojen määristä, mikäli heillä on voimassaolevia lainoja.
