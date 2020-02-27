@@ -7,24 +7,28 @@ Harjoitustyössä on tarkoitus tehdä kirjojen lainausjärjestelmä kirjastolle.
 Kirjaston järjestelmässä kaksi erityyppistä tiliä:
  
   * käyttäjä eli asiakas (rajatut oikeudet), ja
-  * ylläpitäjä (täydet oikeudet).
+  * ylläpitäjä eli esim. kirjaston työntekijä (laajemmat oikeudet).
 
-Ylläpitäjän testitunnukset:
+Ylläpitäjän kirjautumistunnukset:
+
   * Käyttäjänimi: admin
   * Salasana: admintest
 
-Kuka tahansa voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, sekä tehdä lainoja, lainan uusimisia ja palautuksia. Niteiden tiedoissa niteen tunnuksen ja sijainnin lisäksi kirjan tiedot (nimi, kirjoittaja(t), julkaisuvuosi). Ainoastaan ylläpitäjä voi lisätä tai poistaa kirjoja kirjaston valikoimasta.
-
 ## TOIMINTOJA:
 
-  * Kirjautuminen
-  * Asiakkaan rekisteröityminen, omien tietojen tarkastelu ja muokkaus
-  * Asiakkaan tietojen tarkastelu ja muokkaaminen kirjaston työntekijän toimesta
-  * Asiakkaan tarkastelu, lisääminen, muokkaaminen ja poistaminen ylläpitäjän toimesta
-  * Kirjan lainaaminen, lainan uusiminen, lainan kuittaaminen palautetuksi
-  * Asiakkaan lainojen kokonaismäärän rajoittaminen (esim. yhteensä 30 kpl niteitä)
+Käyttäjä: 
 
-Käyttötapaukset (täydentyy projektin etenemisen myötä):
+  * voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, 
+  * voi tehdä lainoja, lainan palautuksia ja palautetuiksi merkittyjen lainojen poistoa. 
+  * voi tarkastella, muokata ja tallentaa omia tietojaan.
+
+Ylläpitäjä: 
+
+  * CRUD-toiminnallisuus kahteen tietokantatauluun: kirja ('book') ja käyttäjä ('account').
+
+Kirjojen tiedoissa on nimi, kirjoittaja, julkaisuvuosi, kappalemäärä, kirjan kuvaus, sekä lukumäärätiedot hyllyssä/lainassa/'palautettu muttei poistettu lainalistalta'. Ainoastaan ylläpitäjä voi lisätä tai poistaa kirjoja kirjaston valikoimasta.
+
+Käyttötapaukset:
 
 https://github.com/hmhei/Tsoha2020/blob/master/documentation/Kayttotapaukset.md
 
