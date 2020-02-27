@@ -16,17 +16,17 @@ Ylläpitäjän kirjautumistunnukset:
 
 ## TOIMINTOJA:
 
-**Käyttäjä: 
+**Käyttäjä:** 
 
   * voi tarkastella kirjaston kirjavalikoimaa ja kirjojen tietoja, 
   * voi tehdä lainoja, lainan palautuksia ja palautetuiksi merkittyjen lainojen poistoa. 
   * voi tarkastella, muokata ja tallentaa omia tietojaan.
 
-**Ylläpitäjä: 
+**Ylläpitäjä:** 
 
   * Täysi CRUD-toiminnallisuus kahteen tietokantatauluun: kirja ('book') ja käyttäjä ('account').
 
-**Yleistä:
+**Yleistä:**
 
   * Sovelluksen eri näkymissä on melko kattavasti ohjeistusta sovelluksen käytöstä.
 
@@ -38,7 +38,7 @@ Ylläpitäjän kirjautumistunnukset:
 
   * Laina ottaa nimensä kirjan lainahetken nimestä. Mikäli ylläpitäjä käy tämän jälkeen muuttamassa kirjan nimeä, muutos ei (tällä hetkellä) heijastu käyttäjän lainaaman kirjan nimeen. Tämä ei mielestäni kuitenkaan ole ongelma, sillä kys. lainan book_id kuitenkin sitoo lainan juuri siihen kirjaan, vaikka kirjan nimi olisikin muutettu, eli hyllylukumäärä yms. toimivat odotetusti (ja todellisuudessakin kirjan nimet harvoin vaihtuvat..).
 
-Käyttötapaukset:
+**_Käyttötapaukset:_**
 
 https://github.com/hmhei/Tsoha2020/blob/master/documentation/Kayttotapaukset.md
 
