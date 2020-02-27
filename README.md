@@ -38,7 +38,7 @@ Ylläpitäjän kirjautumistunnukset:
 
   * Laina ottaa nimensä kirjan lainahetken nimestä. Mikäli ylläpitäjä käy tämän jälkeen muuttamassa kirjan nimeä, muutos ei (tällä hetkellä) heijastu käyttäjän lainaaman kirjan nimeen. Tämä ei mielestäni kuitenkaan ole ongelma, sillä kys. lainan book_id kuitenkin sitoo lainan juuri siihen kirjaan, vaikka kirjan nimi olisikin muutettu, eli hyllylukumäärä yms. toimivat odotetusti (ja todellisuudessakin kirjan nimet harvoin vaihtuvat..).
 
-**_Käyttötapaukset:_**
+**Käyttötapaukset:**
 
 https://github.com/hmhei/Tsoha2020/blob/master/documentation/Kayttotapaukset.md
 
