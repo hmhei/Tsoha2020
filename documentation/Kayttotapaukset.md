@@ -10,11 +10,9 @@ Käyttäjänä haluan lisätä uuden lainan, jotta kirjasto tietää lainanneeni
 
 Käyttäjänä haluan merkitä lainan palautetuksi, jotta kirjasto tietää palauttaneeni kirjan.
 
-Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään (Huom: vain osittain toteutettu, eli foreign keyn osalta).
+Käyttäjänä haluan, että kukin laina kohdistuu juuri minuun, eikä kehenkään muuhun käyttäjään, ja että vain minä itse näen omat lainani eikä kukaan muu käyttäjä.
 
-Käyttäjänä haluan poistaa lainan, esimerkiksi lyöntivirheen tms. johdosta (tämä osa tietokannan toiminnallisuutta on harkinnassa, mutta se on  nyt lisätty ainakin toistaiseksi täyden CRUD-toiminnallisuuden toteuttamiseksi).
-
-## TOTEUTTAMATTA
+Käyttäjänä haluan poistaa lainan lainalistaltani, kun kys. laina on palautettu (jos sovellusta haluaa tulevaisuudessa jatkokehittää, niin voisi pohtia mikä olisi järkevin tapa toteuttaa tämä jako lainan palautuksen / lainamerkinnän poiston välillä. Kuitenkin tämän harjoitustyön puitteissa toiminnallisuus lienee OK nykyisessä muodossaan).
 
 Käyttäjänä haluan pystyä lukemaan kirjaston tietokannassa olevat kirjat, jotta voin nähdä, mitä kirjoja kirjastossa on olemassa.
 
@@ -22,4 +20,6 @@ Käyttäjänä haluan pystyä muokkaamaan omia tietojani, jotta ne pysyvät ajan
 
 Ylläpitäjänä haluan pystyä lisäämään, lukemaan, muokkaamaan ja poistamaan kirjoja järjestelmässä, jotta kirjaston kirjatietokanta pysyy ajan tasalla.
 
-... (jatkuu)
+Ylläpitäjänä haluan pystyä näkemään kunkin kirjan laina/palautustilanteen kirjan tiedoista.
+
+Ylläpitäjänä haluan pystyä hallinnoimaan sovelluksen käyttäjätietoja (tarkastelemaan, luomaan, muokkaamaan ja poistamaan käyttäjätietoja). 
