@@ -20,4 +20,4 @@ Noudata sovelluksessa annettuja kirjautumis- ja käyttöohjeita.
 
 Olet nyt valmis käyttämään sovellusta!
 
-# Heroku
+# Remote
