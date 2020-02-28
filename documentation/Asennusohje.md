@@ -25,9 +25,9 @@ Luo komentoriviltä (sovelluksen juurikansiossa) sovellukselle paikka Herokuun (
 Lisää vielä paikalliseen versionhallintaan tieto Herokusta (git remote add heroku https://git.heroku.com/joku-nimi.git).
 
 Nyt voit lähettää sovelluksen Herokuun:
-  git add .
-  git commit -m "Initial commit"
-  git push heroku master
+  * git add .
+  * git commit -m "Initial commit"
+  * git push heroku master
 
 Lisää komentoriviltä sovelluksen käyttöön tieto siitä, että sovellus on Herokussa (heroku config:set HEROKU=1).
 
