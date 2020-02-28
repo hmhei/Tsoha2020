@@ -8,7 +8,7 @@ Navigoi komentorivillä sovelluksen juurikansioon, asenna virtuaaliympäristö (
 
 Asenna vaaditut riippuvuudet (pip install -r requirements.txt).
 
-Käynnistä ohjelma juurikansiosta komennolla (python run.py). Tämän jälkeen voit sulkea ohjelman (CTRL + c). Sovelluksen tietokanta (loans.db) on nyt luotu application-kansioon.
+Käynnistä ohjelma juurikansiosta (python run.py). Tämän jälkeen voit sulkea ohjelman (CTRL + c). Sovelluksen tietokanta (loans.db) on nyt luotu application-kansioon.
 
 Navigoi application-kansioon, ja avaa tietokanta (sqlite3 loans.db). Asenna admin-tunnukset (INSERT INTO account (name, username, password, address, phone, admin) VALUES ('Ylläpitäjä', 'admin', 'admintest', '-', '-', 1);
 
