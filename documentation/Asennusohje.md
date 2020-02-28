@@ -1,6 +1,6 @@
-## Asennusohje
+# Asennusohje
 
-# Local
+## Local
 
 Lataa tai kloonaa sovellus Githubista (https://github.com/hmhei/Tsoha2020).
 
@@ -12,12 +12,10 @@ Käynnistä ohjelma juurikansiosta komennolla (python run.py). Tämän jälkeen 
 
 Navigoi application-kansioon, ja avaa tietokanta (sqlite3 loans.db). Asenna admin-tunnukset (INSERT INTO account (name, username, password, address, phone, admin) VALUES ('Ylläpitäjä', 'admin', 'admintest', '-', '-', 1);
 
-Poistu sqlitesta (.exit).
+Admin-tunnukset on nyt luotu, joten voit poistua sqlitesta (.exit).
 
 Käynnistä sovellus kuten aiemmin (python run.py), ja navigoi selaimessasi osoitteeseen (localhost:5000).
 
-Noudata sovelluksessa annettuja kirjautumis- ja käyttöohjeita.
+Olet nyt valmis käyttämään sovellusta! Muistathan noudattaa sovelluksessa annettuja kirjautumis- ja käyttöohjeita.
 
-Olet nyt valmis käyttämään sovellusta!
-
-# Remote
+## Remote
