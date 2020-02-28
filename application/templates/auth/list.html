@@ -2,10 +2,15 @@
 
 {% block body %}
   <p>
-    HUOM! Käyttäjää ei voi poistaa, mikäli tällä on voimassa olevia lainoja tai poistamattomia lainan palautuksia.
+    HUOM! Käyttäjää ei voi poistaa, mikäli tällä on voimassa olevia lainoja tai poistamattomia lainan palautuksia. 
+    Mikäli poisto ei näytä menevän läpi, se tarkoittaa, että käyttäjän tulee ensin palauttaa ja poistaa lainansa.
   </p>
   <p>
-    Ylläpitäjän tiliä ei pidä pystyä muokkaamaan tai poistamaan.
+    Myöhemmin saatetaan lisätä ominaisuus, jolla ylläpitäjä voi itse käydä hallinnoimassa käyttäjän lainoja.
+  </p>
+  <p>
+    Ylläpitäjän tiliä ei pidä pystyä muokkaamaan tai poistamaan sovelluksen kautta. 
+    Tämä on tarkoituksellista sovelluksen tässä kehitysvaiheessa.
   </p>
   <p>
     <a href="{{ url_for('auth_adminregister') }}">
