@@ -46,6 +46,10 @@ https://github.com/hmhei/Tsoha2020/blob/master/documentation/Kayttotapaukset.md
 
 https://github.com/hmhei/Tsoha2020/blob/master/documentation/Asennusohje.md
 
+**CREATE_TABLE -lauseet:**
+
+https://github.com/hmhei/Tsoha2020/blob/master/documentation/CREATE_TABLE.md
+
 ## TIETOKANTAKAAVIO:
 
 ![Kirjaston lainausjärjestelmä](https://github.com/hmhei/Tsoha2020/blob/master/documentation/Tietokantakaavio.png)
